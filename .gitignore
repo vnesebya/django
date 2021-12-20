@@ -1,0 +1,31 @@
+.env
+.env_db
+.env_debug
+*.swp
+*.tmp
+*.log
+sync.sh
+
+# Django
+*.pyc
+db.sqlite3
+__packages__/
+__pycache__/
+
+# Environments
+venv/
+
+# Static
+src/static/robots.txt
+src/media/
+# 
+core
+
+# snippet/certbot/conf/
+gulp/node_modules/
+
+# IDE
+.idea/
+
+# исходники less
+gulp/

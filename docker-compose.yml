@@ -1,0 +1,20 @@
+version: '3'
+services:
+  django:
+    build: .
+    # command: ["/bin/sh", "/usr/src/app/start_app.sh"]
+    container_name: app
+    env_file:
+      - .env.example
+    network_mode: "host"
+    ports:
+     # HTTP
+     - 127.0.0.1:8080:8080
+     # PROMETHEUS EXPORTER PORT
+     - 127.0.0.1:8081:8081
+    restart: always
+    volumes:
+      - ./src:/usr/src/app:rw
+      - ./src/static:/usr/src/app/static:rw
+      - ./src/media:/usr/src/app/media:rw
+    user: "1000:1000"
